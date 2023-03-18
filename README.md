@@ -14,4 +14,4 @@ The small scale Node.js project on farming.
 ### Remote to Local :
 1. fork the project
 1. git clone [URL]
-2. git pull
+2. git pull origin main
