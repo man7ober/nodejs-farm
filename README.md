@@ -1,5 +1,5 @@
 # nodejs-farm
-The small scale Node.js project on farming.
+The small scale Node.js project on Farming.
 
 ### Local to Remote :
 1. git init
