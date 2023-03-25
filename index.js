@@ -22,6 +22,7 @@ const tempCard = fs.readFileSync(
   "utf-8"
 );
 
+// CREATE SERVER
 const server = http.createServer((req, res) => {
   const { query, pathname } = url.parse(req.url, true);
 
@@ -30,7 +31,7 @@ const server = http.createServer((req, res) => {
     const cardHtml = dataObj.map((el) => replaceTemplate(tempCard, el));
     const result = tempOverview.replace("PRODUCT_CARD", cardHtml);
 
-    res.writeHead(404, { "Content-type": "text/html" });
+    res.writeHead(200, { "Content-type": "text/html" });
     res.end(result);
 
     // PRODUCT PAGE
@@ -38,7 +39,7 @@ const server = http.createServer((req, res) => {
     const product = dataObj[query.id];
     const result = replaceTemplate(tempProduct, product);
 
-    res.writeHead(404, { "Content-type": "text/html" });
+    res.writeHead(200, { "Content-type": "text/html" });
     res.end(result);
 
     // API PAGE
@@ -53,6 +54,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
+// START SERVER
 server.listen(8000, "127.0.0.1", () => {
   console.log("Listening on port 8000...");
 });
